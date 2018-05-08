@@ -1,20 +1,31 @@
+html, body{
+  overflow: initial !important;
+}
+
 .body-carousel{
   background: black; 
+}
+
+#show {
+    display:block;
+    position:fixed;
+    top:300px;
+    left:300px;
 }
 
 .navbar {
   padding-top: 0;
   padding-bottom: 0; 
   padding-left: 0;
-  padding-right: 32px;
+  padding-right: 0;
   left:0;
   width:100%;
-  position:fixed;
+/*  position:fixed;
   -webkit-backface-visibility: hidden !important;
   -webkit-transform: translate3d(0, 0, 0) !important;
    transform: translate3d(0, 0, 0);
   -webkit-perspective: 1000 !important;
-  backface-visibility: hidden !important;
+  backface-visibility: hidden !important;*/
   z-index: 1000 !important;
 }
 
@@ -186,4 +197,14 @@ h5 span { font-size:16px; }
 
 .nav-tabs {
     margin-bottom: 0;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .body-content {
+  padding-top: 60px;
 }

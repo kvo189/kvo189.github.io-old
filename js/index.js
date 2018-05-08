@@ -1,3 +1,19 @@
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+var show = document.getElementById("show");
+
+function myFunction() {
+  show.innerHTML = document.documentElement.scrollTop || document.body.scrollTop;
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
+
 function disableCollapsePanel(){
   var collapsePanel = document.getElementById('detailed-collapsible');
   var menu4TabList = document.getElementById('menu4-tab-list');
@@ -52,6 +68,8 @@ $(document).ready(function() {
   var navButton = document.getElementById('navButton');
   $(navButton).click(function() {  
     $(this).toggleClass('is-active');
+    var elmnt = document.getElementById("logo");
+    alert(elmnt.scrollLeft+ elmnt.scrollTop);
   })
   
   //collapse navbar on item select
