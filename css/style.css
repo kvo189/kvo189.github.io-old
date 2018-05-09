@@ -2,6 +2,26 @@ html, body{
   overflow: initial !important;
 }
 
+#fb-link{
+  text-decoration: none;
+}
+
+#fb-link span:before{
+  content: 'Follow our Facebook page for lastest updates';
+}
+
+#fb-icon,
+#fb-link span{
+  color:white;
+  vertical-align: middle;
+  line-height: 50px;
+}
+
+#fb-icon + #fb-link:hover,
+#fb-link:hover span{
+  color: rgb(59, 89, 152);
+}
+
 .body-carousel{
   background: black; 
 }
@@ -31,6 +51,10 @@ html, body{
 
 .bg-company-red {
   background-color: rgba(138,48,48, 1);
+}
+
+.bg-cool-dark {
+  background-color: rgb(28,35,49);
 }
 
 .custom-toggler.navbar-toggler {
@@ -75,6 +99,10 @@ a:hover .point{
   transform-origin: 0% 50%;
 }
 
+.nav-item:hover{
+  cursor: pointer;
+}
+
 .custom-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, .85)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
   transition: background-image 1s;
@@ -85,16 +113,18 @@ a:hover .point{
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(138,48,48, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
-@media (max-width: 576px) {
-   .carousel-control-prev,.carousel-control-next{
-      margin: 14% 0 14% 0 !important;
-      width: 48px !important;
+.carouselImg{
+  width: 65%;
+  margin:auto;
+}
+
+@media (max-width: 992px){
+  .carouselImg{
+    width: 85%;
   }
 }
+
 @media (max-width: 767px) {
-  #logo{
-    margin-top: 50px !important;
-  }
   .navbar-collapse {
     background-color: rgba(0,0,0, 0.5);
   }
@@ -116,21 +146,27 @@ a:hover .point{
     transform-origin: 50% 50%;
   }
 
+  .carouselImg{
+    width: 100%;
+  }
 }
 
-#logo{
-  margin-top: 42px;
+
+@media (max-width: 576px) {
+   .carousel-control-prev,.carousel-control-next{
+      margin: 14% 0 14% 0 !important;
+      width: 48px !important;
+  }
+
+  #fb-link span::before{
+    content: 'Follow for lastest updates' !important;
+  }
 }
 
 .carousel-inner>.item {
  width: 100%;
 }
 
-.carouselImg{
-  width:auto;
-  height:auto;
-  max-height: 750px;
-}
 .carousel-caption{
   background-color: rgba(0, 0, 0, 0.2);
 }
@@ -180,18 +216,17 @@ h5 span { font-size:16px; }
 }
 
 #body-content{
-  background-image: url("http://res.cloudinary.com/dpealgfbi/image/upload/v1525653580/asd/background.png");
-  background-repeat: repeat-y;
+  background-image: url("http://res.cloudinary.com/dpealgfbi/image/upload/v1525823866/128-196.jpg");
 }
 
 .body-carousel{
-  border-top: 5px solid black;
+  //border-top: 5px solid black;
   border-bottom: 5px solid black;
 }
 .tab-content {
   border-left: 1px solid #ddd;
   border-right: 1px solid #ddd;
-  background: white;
+  //background: white;
   padding: 10px;
 }
 
@@ -207,4 +242,11 @@ h5 span { font-size:16px; }
 
 .sticky + .body-content {
   padding-top: 60px;
+}
+
+#logo{
+  border-bottom: 5px solid black;
+}
+
+footer{
 }

@@ -1,11 +1,8 @@
 window.onscroll = function() {myFunction()};
-
 var navbar = document.getElementById("navbar");
 var sticky = navbar.offsetTop;
-var show = document.getElementById("show");
 
 function myFunction() {
-  show.innerHTML = document.documentElement.scrollTop || document.body.scrollTop;
   if (window.pageYOffset >= sticky) {
     navbar.classList.add("sticky")
   } else {
@@ -25,11 +22,13 @@ function changeContent(id) {
   var z = document.querySelectorAll('.active.content');
   var x = document.getElementById(id);
 
-  setTimeout(function(){   document.getElementById('togglable-contents').scrollIntoView({
+  setTimeout(function(){
+    document.getElementById('body-carousel').scrollIntoView({
      behavior: "smooth", // or "auto" or "instant"
      block: "start" // or "end"
-   }); }, 100)
-  
+    }); 
+  }, 100)
+
   var i;
   if (!x.classList.contains("active")){
     x.classList.add("active");
@@ -50,14 +49,6 @@ $(document).ready(function() {
     $(this).tab('show')  
   });
   
-  $('#menu4-tab').click(function(){
-    var collapsePanel = document.getElementById('detailed-collapsible');
-    if (collapsePanel.style.maxHeight){
-    } else {
-      collapsePanel.style.maxHeight = collapsePanel.scrollHeight + "px";
-    } 
-  });
-  
   //activate nav link and deactive other active nav links on click
   $(".nav-link.navLinkBar").click(function() {
     $(".nav-link.navLinkBar").removeClass("is-active");
@@ -68,8 +59,6 @@ $(document).ready(function() {
   var navButton = document.getElementById('navButton');
   $(navButton).click(function() {  
     $(this).toggleClass('is-active');
-    var elmnt = document.getElementById("logo");
-    alert(elmnt.scrollLeft+ elmnt.scrollTop);
   })
   
   //collapse navbar on item select
