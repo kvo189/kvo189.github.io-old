@@ -276,3 +276,20 @@ h5 span { font-size:16px; }
   padding-left: 10%;
   font-size: 80%;
 }
+
+[aria-expanded="true"].btn, [aria-expanded="false"].btn:hover {
+  color: #6c757d;
+  background-color: transparent;
+  background-image: none;
+  border-color: #6c757d;
+}
+
+/*[aria-expanded="false"].btn, [aria-expanded="true"].btn:hover{
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}*/
+
+.nav-tabs .nav-link{
+   border-radius: 0;
+}
