@@ -18,16 +18,28 @@ function disableCollapsePanel(){
   menu4TabList.style.height = '0px';
 }
 
-function changeContent(id) {
+function scrollToItem(item) {
+    var diff=(item.offsetTop-window.scrollY)/8
+    if (Math.abs(diff)>1) {
+        window.scrollTo(0, (window.scrollY+diff))
+        clearTimeout(window._TO)
+        window._TO=setTimeout(scrollToItem, 5, item)
+    } else {
+        window.scrollTo(0, item.offsetTop)
+    }
+}
+
+function changeContent(id, classLink) {
   var z = document.querySelectorAll('.active.content');
+  var y = document.querySelectorAll('.link');
   var x = document.getElementById(id);
 
-  setTimeout(function(){
-    document.getElementById('body-carousel').scrollIntoView({
-     behavior: "smooth", // or "auto" or "instant"
-     block: "start" // or "end"
-    }); 
-  }, 100)
+  scrollToItem(x);
+
+  // setTimeout(function(){
+  //   document.getElementById('body-carousel').scrollIntoView({
+  //   }); 
+  // }, 100)
 
   var i;
   if (!x.classList.contains("active")){
@@ -36,6 +48,13 @@ function changeContent(id) {
   for (i = 0; i < z.length; i++) {
     if (x != z[i]){
       z[i].classList.remove("active");
+    }
+  }
+  for (i = 0; i < y.length; i++) {
+    if (!y[i].classList.contains(classLink)){
+      y[i].classList.remove("is-active");
+    }else{
+      y[i].classList.add('is-active');
     }
   }
 }
@@ -50,10 +69,10 @@ $(document).ready(function() {
   });
   
   //activate nav link and deactive other active nav links on click
-  $(".nav-link.navLinkBar").click(function() {
-    $(".nav-link.navLinkBar").removeClass("is-active");
-    $(this).addClass("is-active");  
-  });
+  // $(".nav-link.navLinkBar").click(function() {
+  //   $(".nav-link.navLinkBar").removeClass("is-active");
+  //   $(this).addClass("is-active");  
+  // });
   
   //activate nav button on click
   var navButton = document.getElementById('navButton');
