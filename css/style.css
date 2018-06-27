@@ -90,6 +90,13 @@ hr.hr-heading{
   box-sizing: border-box;
 }
 
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #welcome-section {
+      min-height: 800px;
+    }
+}
+
 #welcome-msg-box{
   line-height: 26px;
   max-width: 400px;
